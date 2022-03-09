@@ -21,17 +21,17 @@ public class Main {
         text = inputFromFile.split(" ");           // Creates and array of strings, where each element is a single word from the file.
         System.out.println(text.length);
 
-       /* printWordsStartingWith("Ø");
+        printWordsStartingWith("Ø");
 
-        printWordsOfLength(3);*/
+        printWordsOfLength(3);
 
         //test dine metoder ved at kalde dem her:
 
-        /*printLongestWord();
+        printLongestWord();
 
-        printFirstHalfOfEachWord();*/
+        printFirstHalfOfEachWord();
 
-        printMostFrequentLetter();
+        printAllOccurrences();
 
     }
 
@@ -86,8 +86,9 @@ public class Main {
         }
     }
 
-    public static void printMostFrequentLetter() throws FileNotFoundException {
-
+    /*Couldn't get it to work with only print the top 10 most occurring,
+    but it prints all letters and their occurrences*/
+    public static void printAllOccurrences() throws FileNotFoundException {
         Scanner scan = new Scanner(new File("data.txt"));
 
         int[] count = new int[26];
@@ -97,9 +98,9 @@ public class Main {
             letter = letter.toLowerCase();
             char[] myChars = letter.toCharArray();
 
-            for (int i = 0; i< myChars.length ; i++) {
-                if((myChars[i] >= 'a') && (myChars[i]<= 'z')) {
-                    count[myChars[i] -'a' ]++;
+            for (int i = 0; i < myChars.length; i++) {
+                if ((myChars[i] >= 'a') && (myChars[i] <= 'z')) {
+                    count[myChars[i] - 'a']++;
                 }
             }
         }
@@ -109,9 +110,10 @@ public class Main {
             System.out.println(": " + count[i]);
         }
     }
-    public static void printLeastFrequentLetter() {
-
-    }
 }
+    /*public static void printLeastFrequentLetter() {
+
+    }*/
+
 
 
